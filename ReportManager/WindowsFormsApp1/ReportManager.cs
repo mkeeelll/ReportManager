@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,8 +45,7 @@ namespace WindowsFormsApp1
         }
         private void SaveReports()
         {
-            File.WriteAllLines("reports.txt", Reports.Select(r =>
-            $"{r.Title}|{r.Content}|{r.CreationDate.ToString("yyyy-MM-dd HH:mm:ss")}"));
+            File.WriteAllLines("reports.txt", Reports.Select(r =>$"{r.Title}|{r.Content}|{r.CreationDate.ToString("yyyy-MM-dd HH:mm:ss")}"));
         }
         private void LoadReports()
         {
